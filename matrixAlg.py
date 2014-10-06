@@ -43,17 +43,13 @@ def printMat(mat):
     newStr += "\n"
   print newStr
 
-
 # Calculates the determinant of a 3x3 matrix, using the 2x2 sub-matrices method
 def det3(mat):
   return ( ( mat[0][0]*det2([[mat[1][1], mat[1][2]], [mat[2][1], mat[2][2]]]) ) - ( mat[0][1]*det2([[mat[1][0], mat[1][2]], [mat[2][0], mat[2][2]]]) ) + (mat[0][2]*det2([[mat[1][0], mat[1][1]], [mat[2][0], mat[2][1]]])) )
 
-
-
 # Calculates the determinant of a 2x2 matrix
 def det2(mat):
   return ((mat[0][0]*mat[1][1]) - (mat[0][1]*mat[1][0]))
-
 
 # Calculates the transpose of a matrix
 # Works for arbitrary NxM size
@@ -68,7 +64,6 @@ def transpose(mat):
 
   return transMat
 
-
 # Calculates the dot product of two vectors, A and B
 def dotProduct(A, B):
   counter = 0
@@ -78,14 +73,12 @@ def dotProduct(A, B):
     counter += 1
   return product
 
-
 # Calculates the length of a vector
 def vectLength(A):
   sumSquares = 0
   for i in A:
     sumSquares = sumSquares + (i**2)
   return math.sqrt(sumSquares)
-
 
 # Multiplies two matrices (A and B) and returns the result
 def matMult(A, B):
@@ -99,7 +92,6 @@ def matMult(A, B):
         for k in range(len(B)):
           newMat[i][j] += A[i][k]*B[k][j]
     return newMat
-
 
 # Converts a given matrix (not necessarily square) to
 # reduced row echelon form
@@ -127,7 +119,6 @@ def toRedRowEchelon(mat):
         mat[i] = [iv - lv * rv for rv, iv in zip(mat[r], mat[i])]
     colPos += 1
   return mat
-
 
 # Finds the inverse of a given matrix
 def invMat(mat):
